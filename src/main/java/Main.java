@@ -10,6 +10,8 @@ public class Main {
 
     static String resultOption;
 
+    static String playerOptionName;
+
     public static void main(String[] args) {
 
         gameInstructions();
@@ -88,7 +90,6 @@ public class Main {
         return gestureSelectionName;
     }
 
-    static String playerOptionName;
 
     public static String[] getPlayerOption() {
         Scanner scanner = new Scanner(System.in);
@@ -106,7 +107,7 @@ public class Main {
         System.out.println("-------------------------------------------------------------------------------------------");
 
         int playersSelection = scanner.nextInt();
-        String finalOutcome = "";
+        String finalOutcome;
 
         Player player = new Player();
 
