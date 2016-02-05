@@ -115,7 +115,6 @@ public class Main {
             case 1:
                 player.setPlayerType("Human v Computer");
                 playerOptionName = player.getPlayerType();
-
                 break;
             case 2:
                 player.setPlayerType("Human v Human");
@@ -142,15 +141,40 @@ public class Main {
         String player1Result = playerSelection[0];
         String player2Result = playerSelection[1];
 
-        sb.append("Player 1 (You) entered:-" + player1Result + "Player 2 entered:-" + player2Result);
-
-        if (player1Result == player2Result) {
-            result = "TIE!";
+        if (player1Result.equals(player2Result)) {
+            result = "The result is a tie!";
         } else {
-            result = "NO ANSWER!";
+            if (player1Result.equals("Rock")) {
+                if (player2Result.equals("Paper")) {
+                    result = "Paper beats rock. Player2 Wins.";
+                } else {
+                    result = "Rock beats scissors. Player 1(You) Wins.";
+
+                }
+            } else {
+                if (player1Result.equals("Paper")) {
+                    if (player2Result.equals("Rock")) {
+                        result = "Paper beats rock. Player 1(You) Wins.";
+                    } else {
+                        result = "Scissors beat paper. Player2 Wins.";
+                    }
+
+                }
+                if (player1Result.equals("Scissors")) {
+                    if (player2Result.equals("Rock")) {
+                        result = "Rock beats scissors. Player2 Wins.";
+                    } else {
+                        result = "Scissors beat paper. Player 1(You) Wins.";
+                    }
+
+                }
+            }
         }
 
-        sb.append("Result is::::" + result);
+
+        sb.append(System.getProperty("line.separator"));
+        sb.append("Result is:::: " + result);
+
         return sb.toString();
     }
 
