@@ -22,9 +22,7 @@ public class Main {
 
         resultOption = endOption[1];
 
-
         System.out.println("You are playing:- " + playerOption);
-
         System.out.println(resultOption);
     }
 
@@ -127,13 +125,13 @@ public class Main {
                 break;
         }
 
-        finalOutcome = calculateResults();
+        finalOutcome = printResults();
         String[] finalOutcomes = {playerOptionName, finalOutcome};
         return finalOutcomes;
 
     }
 
-    public static String calculateResults() {
+    public static String printResults() {
 
         StringBuilder sb = new StringBuilder();
         String result = "";
