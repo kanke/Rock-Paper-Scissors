@@ -13,10 +13,19 @@ So that I can spend an hour of my day having fun.
 ######Rules:
 ![Rules](https://github.com/kanke/Rock-Paper-Scissors/blob/master/src/main/resources/RPSSL.png)
 
-use SOLID
+######To Do:
+* use SOLID
 
-use Design Pattern
+* use Design Pattern
 
-Use Docker
+* Use of interface/implementation segragation.
 
-Deploy using AWS for Docker
+* Use Enums instead of magic numbers for GameResult.
+
+* Handle NullPointerException when incorrect players or value is entered
+
+* Finish writing tests
+
+* Use Docker
+
+* Deploy using AWS for Docker

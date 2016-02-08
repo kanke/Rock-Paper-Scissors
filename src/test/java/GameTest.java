@@ -3,10 +3,13 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
@@ -37,6 +40,9 @@ public class GameTest {
     @Spy
     @InjectMocks
     Game game;
+
+    @Mock
+    Player player;
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -73,47 +79,22 @@ public class GameTest {
 
     }
 
-   /* protected void playGame() {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Starting game............Select?");
-
-
-        System.out.println("-------------------------------------------------------------------------------------------");
-        System.out.println("Choose players:");
-        System.out.println("1. Human v Computer");
-        System.out.println("2. Human v Human");
-        System.out.println("3. Computer v Computer");
-
-
-        System.out.println("-------------------------------------------------------------------------------------------");
-
-        int playersSelection = scanner.nextInt();
-
-        Player player = new Player();
-
-        switch (playersSelection) {
-            case 1:
-                player.setPlayerType("Human v Computer");
-                playerOptionName = player.getPlayerType();
-                break;
-            case 2:
-                player.setPlayerType("Human v Human");
-                playerOptionName = player.getPlayerType();
-
-                break;
-            case 3:
-                player.setPlayerType("Computer v Computer");
-                playerOptionName = player.getPlayerType();
-                break;
-        }
-
-        printResults();
-
-    }*/
-
     @Test
     public void shouldPlayGame() {
+
+
+        String playerOptionName = "1";
+
+        InputStream in = new ByteArrayInputStream(playerOptionName.getBytes());
+        System.setIn(in);
+
+        System.out.println("in" + in);
+
+        player.setPlayerType(playerOptionName);
+
+        when(player.getPlayerType()).thenReturn(playerOptionName);
+
+        assertEquals(player.getPlayerType(), playerOptionName);
 
     }
 }

@@ -68,6 +68,7 @@ public class Game {
                 gestureSelectionName = scissors.getName();
                 break;
         }
+        scanner.close();
         return gestureSelectionName;
     }
 
@@ -106,6 +107,7 @@ public class Game {
                 playerOptionName = player.getPlayerType();
                 break;
         }
+        scanner.close();
 
         printResults();
 
